@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - Météo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Météo actuelle</h1>
+        <div class="page-choix" v-if="formulaire == 1">
+            <div class="formulaire ville">
+                <h2>Choisissez une ville</h2>
+                <form @submit.prevent="rechercheVille" name="form_ville" action="#js" method="get">
+                    <div><input v-model="ville" type="text" name="ville" placeholder="Ville" required></div>
+                    <div><input v-model="pays" type="text" name="pays" maxlength="2" placeholder="Pays (ex:CA) - facultatif"></div>
+                    <div><input type="submit" value="Rechercher"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="page-meteo" v-cloak v-if="formulaire == 0">
+            <div class="formulaire temperature">
+                <button class="bouton-retour" @click="deconnexion">
+                    Changer de ville
+                </button>
+
+                <div class="infos-temperature-haut">
+                    <h2 class="nom-ville">{{ informations.name }} ({{ informations.sys.country }})</h2>
+                    <div class="icon">
+                        <img :src="'http://openweathermap.org/img/wn/' + icon + '@2x.png'" alt="">
+                    </div>
+                    <h2 class="temp-celsius">{{ Math.round(informations.main.temp) }} °C</h2>
+                    <div class="temp-ressenti">
+                        <p>ressenti: <span>{{ Math.round(informations.main.feels_like)}} °C</span></p>
+                    </div>
+                </div>
+
+                <div class="infos-temperature-bas">
+                    <div class="conditions">
+                        <p>Condition: <span>{{ capital(informations.weather[0].description) }}</span></p>
+                    </div>
+                    <div class="vent">
+                        <p>Vent: <span>{{ informations.wind.speed }} km/h {{ vent }}</span></p>
+                    </div>
+                    <div class="leve-soleil">
+                        <p>Levé du soleil: <span>{{ dates(heure_leve) }}</span></p>
+                        <p>Couché du soleil: <span>{{ dates(heure_couche) }}</span></p>
+                    </div>
+
+                    <!-- visible seulement si data n'est pas vide -->
+                    <div class="precipitations-neige" v-if="neige !=''">
+                        <p>Précipitations de neige dans la dernière heure: <span>{{ this.neige }} cm</span></p>
+                    </div>
+
+                    <!-- visible seulement si data n'est pas vide -->
+                    <div class="precipitations-pluie" v-if="pluie !=''">
+                        <p>Précipitations de pluie dans la dernière heure: <span>{{ this.pluie }} cm</span></p>
+                    </div>
+                    <div class="fuseau-horaire">
+                        <p>Fuseau horaire: <span>{{ informations.timezone / 3600 }}h</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

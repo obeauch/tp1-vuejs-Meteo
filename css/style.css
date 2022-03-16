@@ -1,0 +1,165 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url(../images/fond-ciel.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #023047;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  height: 100vh;
+  margin: 0px;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+
+h1 {
+  -webkit-animation-name: titre;
+          animation-name: titre;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  color: linear-gradient(45deg, #023047, #219ebc, #ffb703);
+  -webkit-box-shadow: 3px 3px 30px #f5eac7;
+          box-shadow: 3px 3px 30px #f5eac7;
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 0px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+h2, h3, h4, p {
+  margin: 5px 0px;
+}
+
+.formulaire {
+  background-color: rgba(142, 202, 230, 0.6);
+  border: 2px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 30px #f5eac7;
+          box-shadow: 3px 3px 30px #f5eac7;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+.formulaire h2 {
+  text-align: center;
+}
+
+.ville {
+  min-width: 250px;
+  max-width: 400px;
+  width: 80vw;
+}
+
+.ville input {
+  border-top: 1px solid #023047;
+  border-left: 1px solid #023047;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 3px 3px 8px #023047;
+          box-shadow: inset 3px 3px 8px #023047;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.ville input[type=submit] {
+  background-color: #219ebc;
+  color: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.ville input[type=submit]:hover {
+  background-color: #023047;
+}
+
+.temperature {
+  min-width: 300px;
+  max-width: 500px;
+  width: 80vw;
+}
+
+.temperature .bouton-retour {
+  background-color: #219ebc;
+  color: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 2px solid #023047;
+  border-radius: 3px;
+  height: 30px;
+}
+
+.temperature .bouton-retour:hover {
+  background-color: #023047;
+}
+
+.temperature .infos-temperature-haut, .temperature .infos-temperature-bas {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.temperature .infos-temperature-haut span, .temperature .infos-temperature-bas span {
+  font-weight: bold;
+}
+
+.temperature .infos-temperature-haut .temp-celsius, .temperature .infos-temperature-bas .temp-celsius {
+  font-size: 30px;
+}
+
+@-webkit-keyframes titre {
+  0% {
+    text-shadow: 1px 1px 3px #8ecae6;
+    color: #023047;
+  }
+  25% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #219ebc;
+  }
+  50% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #8ecae6;
+  }
+  75% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #219ebc;
+  }
+  100% {
+    text-shadow: 1px 1px 3px #8ecae6;
+    color: #023047;
+  }
+}
+
+@keyframes titre {
+  0% {
+    text-shadow: 1px 1px 3px #8ecae6;
+    color: #023047;
+  }
+  25% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #219ebc;
+  }
+  50% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #8ecae6;
+  }
+  75% {
+    text-shadow: 1px 1px 3px #023047;
+    color: #219ebc;
+  }
+  100% {
+    text-shadow: 1px 1px 3px #8ecae6;
+    color: #023047;
+  }
+}
+/*# sourceMappingURL=style.css.map */
