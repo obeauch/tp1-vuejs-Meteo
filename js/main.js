@@ -71,7 +71,7 @@ const app = {
 
 
             fetch(url + param_lat + "&" + param_lon + "&" + param_id + param_metric + param_langue, options).then(resp => resp.json()).then(data => {
-                // console.log(data)
+                console.log(data)
                 this.informations = data
                 this.formulaire = 0
                 this.icon = data.weather[0].icon
